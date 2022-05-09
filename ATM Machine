@@ -1,0 +1,79 @@
+
+pin = 123 # This is default for everyone
+
+balance = 500 # This is default for everyone
+
+
+
+name = input("Welcome to Yoshi's Bank! My name is Professor Oak, and I will be your service representative.\nYou must be erm... What was your name again? \n")
+
+print("Ah yes welcome,",name)
+
+new = False
+
+for i in range (3):
+    userpin = int(input("Please enter your PIN: "))
+
+    if userpin == pin:
+        new = True
+        break
+
+    else:
+        print("Invalid PIN! You have ", 2 - i, "tries left.")
+
+if not new:
+    print("Thank you for using Yoshi's Bank!")
+
+else:
+    transactions = []
+    newbalance = []
+    
+    while True:
+
+        choice = input("What would you like to do? \n(w)ithdraw\n(d)eposit\ne(x)it\n")
+        choice = choice.lower()
+
+        if choice == 'w':
+            amount = float(input("How much would you like to withdraw? "))
+
+            if balance - amount >= 0 and amount > 0:
+                print ("You have withdrawn successfully.")
+
+                balance = balance - amount
+                transactions.append(-1*amount)
+                newbalance.append(balance)
+
+                
+            elif amount > balance:
+
+                print( "Sorry, you are not that wealthy yet.")
+
+            else:
+                print("Sorry, maybe you haven’t taken your core finance class yet. That’s not a valid input.")
+        
+        elif choice == 'd':
+            amount = float(input("How much would you like to deposit? "))
+
+            if amount > 0:
+                print("You have deposited successfully.")
+                balance = balance + amount
+                transactions.append(amount)
+                newbalance.append(balance)
+
+            else:
+                print("You can't deposit ", amount)
+
+        elif choice == 'x':
+
+            print("You started with a balance of $", 500 , "Here are your transactions:")
+           
+            for val in transactions:
+                for money in newbalance:
+                    if val > 0:
+                     print("Deposit $",val, "New Balance $", money)
+
+                    else:
+                        print("Withdraw $", val, "New Balance $", money)
+
+            print("Thank you for using Yoshi's Bank!")
+            break
