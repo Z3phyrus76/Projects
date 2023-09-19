@@ -1,0 +1,10 @@
+#Visual Studio Code
+
+temperature = 75
+forecast = "rainy"
+
+if temperature < 80 and forecast != "rainy":
+  Print("Go outside!")
+
+else:
+  print("Stay inside!")
