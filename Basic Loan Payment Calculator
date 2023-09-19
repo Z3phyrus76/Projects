@@ -12,7 +12,7 @@ monthly_rate = apr/100/12
 for in range(months):
 
   #Calc interest to pay
-  interestp_paid = money_owed* monthly interest_rate
+  interest_paid = money_owed* monthly_rate
   
   #add interest
   money_owed = money_owed + interest_paid
