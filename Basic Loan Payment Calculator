@@ -5,7 +5,7 @@
 money_owed = float(input("How much money do you owe, in dollars?\n" )) #ex $50,000
 apr        = float(input("What is the annual percentage rate of the loan?\n")) # 3% mortgage 
 payment    = float(input("How much will you pay off each month in dollars?\n")) #$1,000
-months     = float(input("How many months do you want to see the results for?"\n")) #24 months
+months     = float(input("How many months do you want to see the results for?\n")) #24 months
 
 monthly_rate = apr/100/12
 
